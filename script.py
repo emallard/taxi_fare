@@ -1,4 +1,9 @@
 import pandas as pd
-train = pd.read_csv('data/train.csv')
-print(f'train shape {train.shape}')
-#print(train.head())
+import matplotlib.pyplot as plt
+import data
+
+data.load()
+data.train.fare_amount.hist(bins=30, alpha=0.5)
+plt.show()
+
+# => This is a regression problem
