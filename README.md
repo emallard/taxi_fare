@@ -48,3 +48,28 @@ The general rule is to prefer Stratified K-Fold over usual K-Fold in any classif
 TimeSeriesSplit
 print('Mean validation MSE: {:.5f}'.format(np.mean(mse_scores)))
 print('Overall validation MSE: {:.5f}'.format(np.mean(mse_scores) + np.std(mse_scores)))
+
+Feature engineering : create new features
+pd.to_datetime(df['date'])
+df['date'].dt.year
+
+Lable Data : 'a', 'b', 'c'
+from sklearn.preprocessing import LabelEncoder
+houses['RoofStyle_enc'] = le.fit_transform(houses['RoofStyle'])
+pd.get_dummies : One-Hot encoding
+
+Other encoding:
+Backward Difference Coding
+BaseN
+Binary
+CatBoost Encoder
+Helmert Coding
+James-Stein Encoder
+Leave One Out 
+...
+Target Encoder ?????
+
+Missing Data:
+df.isnull().head() / .sum()
+from sklearn.impute import SimpleImputer
+mean_imputer = SimpleImputer(strategy="mean")
